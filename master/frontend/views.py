@@ -2,7 +2,6 @@ from django.contrib.auth import login
 from django.shortcuts import render, redirect
 from .forms import CustomAuthenticationForm
 from django.contrib.auth.decorators import login_required
-from accounts.models import UserFile
 
 def home(request):
     form = CustomAuthenticationForm(request, data=request.POST or None)
@@ -16,8 +15,6 @@ def home(request):
 @login_required
 def dashboard(request):
     if request.user.is_superuser:
-        all_files = UserFile.objects.all()
-        return render(request, 'dashboard.html', {'all_files': all_files})
+        return render(request, 'dashboard.html', {'message': "Super administrateur : fonctionnalité en cours de développement."})
     else:
-        user_files = UserFile.objects.filter(user=request.user)
-        return render(request, 'dashboard.html', {'user_files': user_files})
+        return render(request, 'dashboard.html', {'message': "Utilisateur : fonctionnalité en cours de développement."})

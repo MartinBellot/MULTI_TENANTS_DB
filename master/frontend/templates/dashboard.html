@@ -11,30 +11,12 @@
 </div>
 
 <div class="container">
-    <h2>Bienvenue, {{ user.first_name }} !</h2>
-    <p>Ceci est votre tableau de bord. Vous pouvez gérer vos fichiers et vos données ici.</p>
-
     {% if user.is_superuser %}
-        <h3>Fichiers de tous les utilisateurs</h3>
-        <div class="file-list">
-            {% for file in all_files %}
-                <div class="file-card">
-                    <p><strong>Utilisateur :</strong> {{ file.user.email }}</p>
-                    <p><strong>Nom du fichier :</strong> <a href="{{ file.file.url }}">{{ file.file.name }}</a></p>
-                    <p><strong>Date d'upload :</strong> {{ file.uploaded_at }}</p>
-                </div>
-            {% endfor %}
-        </div>
+        <h3>Bienvenue, Super Administrateur !</h3>
+        <p>Vous aurez bientôt accès à tous les fichiers des utilisateurs ici.</p>
     {% else %}
-        <h3>Vos fichiers</h3>
-        <div class="file-list">
-            {% for file in user_files %}
-                <div class="file-card">
-                    <p><strong>Nom du fichier :</strong> <a href="{{ file.file.url }}">{{ file.file.name }}</a></p>
-                    <p><strong>Date d'upload :</strong> {{ file.uploaded_at }}</p>
-                </div>
-            {% endfor %}
-        </div>
+        <h3>Bienvenue, {{ user.first_name }} !</h3>
+        <p>Vous pourrez bientôt gérer vos fichiers ici.</p>
     {% endif %}
 </div>
 {% endblock %}
