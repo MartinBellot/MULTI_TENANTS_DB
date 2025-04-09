@@ -5,6 +5,9 @@ FROM python:3.10-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# Installer netcat pour le wait-for-db
+RUN apt-get update && apt-get install -y netcat-traditional && rm -rf /var/lib/apt/lists/*
+
 # Répertoire de travail dans le container
 WORKDIR /app
 
@@ -16,11 +19,12 @@ RUN pip install --upgrade pip && \
 # Copier le reste du projet dans le container
 COPY . /app/
 
-# Collecte des fichiers statiques (si applicable)
-RUN python manage.py collectstatic --noinput
+# Copier le script entrypoint dans le container et le rendre exécutable
+COPY entrypoint.sh /app/
+RUN chmod +x /app/entrypoint.sh
 
 # Exposer le port utilisé par l'application
 EXPOSE 8000
 
-# Commande de démarrage avec Gunicorn
-CMD ["gunicorn", "master.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Utiliser entrypoint.sh comme point d'entrée
+ENTRYPOINT ["/app/entrypoint.sh"]
