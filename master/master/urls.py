@@ -19,6 +19,7 @@ from django.urls import path, include
 from frontend.views import home
 
 urlpatterns = [
+    path('admin/', admin.site.urls),  # Route pour l'interface d'administration
     path('', home, name='home'),  # Route pour la page d'accueil
     path('accounts/', include('accounts.urls')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
