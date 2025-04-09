@@ -1,9 +1,9 @@
-# Utilisation d'une image officielle de Python
-FROM python:3.10-slim
+# Utilisation d'une image officielle de Python avec un tag spécifique
+FROM python:3.10.12-slim-bullseye
 
 # Empêcher la création de fichiers .pyc et d'autres caches
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Installer netcat pour le wait-for-db
 RUN apt-get update && apt-get install -y netcat-traditional && rm -rf /var/lib/apt/lists/*
