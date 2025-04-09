@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'oauth2_provider',
-    'testapp'
+    'testapp',
+    'frontend',
 ]
 
 REST_FRAMEWORK = {
@@ -137,12 +138,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [ BASE_DIR / "frontend" / "static" ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MASTER_TOKEN_URL = "http://127.0.0.1:8000/o/token/"
 OAUTH2_INTROSPECTION_URL = 'http://127.0.0.1:8000/o/introspect/'
 OAUTH2_CLIENT_ID = "FJFLMVUmDMU09wEFMwXMvkJrsMzIcLWMFMHgKVWM"       # Remplacez par le Client ID enregistré dans Master
 OAUTH2_CLIENT_SECRET = "9Pfg2zGGoV6d7u0rmE3c329cqEfXR6favCsmtefUCuINSse4LvnCj64PAhkgA0EOtYTUllmxxLEwpxeOBWC3C9rKYMGmGFjoFSNXBQCaQv0IWko6bEJcJjz159Zd4EDs"  

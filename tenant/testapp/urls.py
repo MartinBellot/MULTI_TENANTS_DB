@@ -5,4 +5,5 @@ from django.urls import path
 
 urlpatterns = [
     path('test/', protected_view, name='protected_view'),
+    
 ]

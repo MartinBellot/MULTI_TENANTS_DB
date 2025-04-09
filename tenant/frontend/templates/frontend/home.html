@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil Tenant</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue dans le Tenant !</h1>
+        <p>Vous êtes authentifié.</p>
+        <p><a href="{% url 'login' %}">Se déconnecter</a></p>
+    </div>
+</body>
+</html>
