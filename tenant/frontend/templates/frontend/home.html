@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Bienvenue dans le Tenant !</h1>
-        <p>Vous êtes authentifié.</p>
+        <p>Vous êtes authentifié en tant que {{ user.username }}.</p>
         <p><a href="{% url 'login' %}">Se déconnecter</a></p>
     </div>
 </body>
