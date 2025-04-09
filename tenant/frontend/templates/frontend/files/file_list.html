@@ -1,0 +1,25 @@
+<!-- files/templates/files/file_list.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des fichiers</title>
+</head>
+<body>
+    <h1>Liste des fichiers</h1>
+    <p><a href="{% url 'file_upload' %}">Uploader un nouveau fichier</a> | <a href="{% url 'file_search' %}">Rechercher</a></p>
+    {% if search %}
+        <h3>Résultats de la recherche pour "{{ query }}" :</h3>
+    {% endif %}
+    <ul>
+        {% for f in files %}
+            <li>
+                {{ f.original_name }} (uploadé le {{ f.upload_date }})
+                - <a href="{% url 'file_download' f.pk %}">Télécharger</a>
+            </li>
+        {% empty %}
+            <li>Aucun fichier.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

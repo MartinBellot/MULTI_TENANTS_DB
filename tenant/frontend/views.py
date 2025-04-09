@@ -42,6 +42,7 @@ def home_view(request):
     Page d'accueil accessible uniquement aux utilisateurs authentifiés.
     """
     access_token = request.session.get('access_token')
+    print(f"Passer dans tenant frontend avec accesstoken : {access_token}")
     if not access_token:
         return redirect('login')
     # Vous pouvez également faire appel à une API interne en utilisant le token.

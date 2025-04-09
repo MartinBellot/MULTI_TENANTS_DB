@@ -1,0 +1,17 @@
+<!-- files/templates/files/file_search.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechercher un fichier</title>
+</head>
+<body>
+    <h1>Rechercher un fichier par mot-clé</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Rechercher</button>
+    </form>
+    <p><a href="{% url 'file_list' %}">Retour à la liste</a></p>
+</body>
+</html>

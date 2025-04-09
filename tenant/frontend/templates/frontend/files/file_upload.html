@@ -1,0 +1,17 @@
+<!-- files/templates/files/file_upload.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploader un fichier</title>
+</head>
+<body>
+    <h1>Uploader un fichier</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Envoyer</button>
+    </form>
+    <p><a href="{% url 'file_list' %}">Retour à la liste</a></p>
+</body>
+</html>
