@@ -21,6 +21,6 @@ from accounts import views
 urlpatterns = [
     path('', views.home, name='home'),  # Route pour la page d'accueil
     path('accounts/', include('accounts.urls')),
-    path('admin/', admin.site.urls),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
 

@@ -38,8 +38,27 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
     'oauth2_provider',
+    'testapp'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+# Configuration minimale d'OAuth2 (ajustez les scopes selon vos besoins)
+OAUTH2_PROVIDER = {
+    'SCOPES': {
+        'read': 'Accès en lecture',
+        'write': 'Accès en écriture'
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,3 +142,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+OAUTH2_INTROSPECTION_URL = 'http://127.0.0.1:8000/o/introspect/'
+OAUTH2_CLIENT_ID = "FJFLMVUmDMU09wEFMwXMvkJrsMzIcLWMFMHgKVWM"       # Remplacez par le Client ID enregistré dans Master
+OAUTH2_CLIENT_SECRET = "9Pfg2zGGoV6d7u0rmE3c329cqEfXR6favCsmtefUCuINSse4LvnCj64PAhkgA0EOtYTUllmxxLEwpxeOBWC3C9rKYMGmGFjoFSNXBQCaQv0IWko6bEJcJjz159Zd4EDs"  
