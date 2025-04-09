@@ -1,9 +1,10 @@
-from django.http import JsonResponse
-from oauth2_provider.decorators import protected_resource
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.response import Response
+from tenant.authentication import MasterIntrospectionAuthentication
+from rest_framework.permissions import IsAuthenticated
 
-@protected_resource()
-def test_view(request):
-    """
-    Vue de test accessible uniquement si le token OAuth est valide.
-    """
-    return JsonResponse({'message': 'Accès autorisé via OAuth depuis Master'})
+@api_view(['GET'])
+@authentication_classes([MasterIntrospectionAuthentication])
+@permission_classes([IsAuthenticated])
+def protected_view(request):
+    return Response({'message': 'Accès autorisé via OAuth2 (introspection) !'})
