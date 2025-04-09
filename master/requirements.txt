@@ -1,0 +1,6 @@
+Django>=4.2,<5.0
+django-oauth-toolkit>=1.10.0
+python-dotenv>=1.0.0
+gunicorn>=20.0.4
+psycopg2-binary>=2.9
+dj-database-url>=1.2.0
