@@ -1,16 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil Tenant</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'frontend/style.css' %}" />
+    <style>
+      /* Inline styles to mimic a Google Drive-like layout */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f1f3f4;
+      }
+      .header {
+        background-color: #4285f4;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .header .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .header .search-bar {
+        flex: 1;
+        margin: 0 20px;
+      }
+      .header input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+      }
+      .sidebar {
+        width: 240px;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        height: calc(100vh - 60px);
+      }
+      .main-content {
+        flex: 1;
+        padding: 20px;
+      }
+      .container {
+        display: flex;
+      }
+      .file-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .file {
+        background-color: white;
+        border-radius: 4px;
+        padding: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .file i {
+        font-size: 40px;
+        color: #4285f4;
+      }
+      .logout {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">Mon Drive</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Rechercher dans Drive..." />
+      </div>
+      <div>
+        <a class="logout" href="{% url 'login' %}">Déconnexion</a>
+      </div>
+    </header>
     <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul style="list-style: none; padding: 0">
+            <li style="margin-bottom: 10px"><a href="#">Mon Drive</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
         <h1>Bienvenue dans le Tenant !</h1>
-        <p>Vous êtes authentifié en tant que {{ user.username }}.</p>
-        <p><a href="{% url 'login' %}">Se déconnecter</a></p>
+        <p>Vous êtes authentifié en tant que {{ user.username }}</p>
+        <!-- Section d'affichage de la grille des fichiers -->
+        <div class="file-grid">
+          {% for file in files %}
+          <div class="file">
+            <i class="fa fa-file"></i>
+            <p>{{ file.original_name }}</p>
+          </div>
+          {% empty %}
+          <p>Aucun fichier uploadé pour l'instant.</p>
+          {% endfor %}
+        </div>
+
+        <!-- Section pour uploader un fichier -->
+        <section class="upload-section">
+          <h2>Ajouter un fichier</h2>
+          <form
+            action="{% url 'upload_file' %}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <label for="folder">Choisir le dossier :</label>
+            <select name="folder" id="folder">
+              <option value="1">Dossier 1</option>
+              <option value="2">Dossier 2</option>
+            </select>
+            <br />
+            <label for="file_upload">Sélectionner le fichier :</label>
+            <input type="file" name="file_upload" id="file_upload" required />
+            <br />
+            <button type="submit">Uploader le fichier</button>
+          </form>
+        </section>
+      </main>
     </div>
-</body>
+    <!-- N'oubliez pas d'inclure une référence à Font Awesome pour les icônes si nécessaire -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 import requests
+from django.views.decorators.http import require_POST
+from files.models import File
 
 def login_view(request):
     """
@@ -37,3 +39,36 @@ def login_view(request):
                 error = "Erreur d'authentification"
 
     return render(request, "frontend/login.html", {"error": error})
+
+def home_view(request):
+    """
+    Page d'accueil accessible uniquement aux utilisateurs authentifiés.
+    """
+    access_token = request.session.get('access_token')
+    print(f"Passer dans tenant frontend avec accesstoken : {access_token}")
+    if not access_token:
+        return redirect('login')
+    files = File.objects.all()
+    # Vous pouvez également faire appel à une API interne en utilisant le token.
+    return render(request, "frontend/home.html", {"files": files})
+
+@require_POST
+def upload_file(request):
+    # Récupérer le fichier uploadé
+    uploaded_file = request.FILES.get('file_upload')
+    # Récupérer le dossier sélectionné
+    folder_id = request.POST.get('folder')
+    
+    if uploaded_file:
+        # Créer et sauvegarder une instance de File
+        file_instance = File.objects.create(
+            original_name = uploaded_file.name,
+            file_path = uploaded_file,
+            # Vous pouvez sauvegarder ou utiliser folder_id si vous avez créé un champ correspondant dans le modèle
+        )
+        file_instance.save()
+        
+        return redirect('home')
+    else:
+        # Gérer le cas où aucun fichier n'a été uploadé
+        return render(request, 'frontend/home.html', {'error': 'Aucun fichier sélectionné'})
