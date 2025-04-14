@@ -10,14 +10,14 @@ def home(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('dashboard')
+            return redirect('/admin/')
     return render(request, 'home.html', {'form': form})
 
 @login_required
 def dashboard(request):
     if request.user.is_superuser:
         all_files = CustomUser.objects.all()
-        return render(request, 'dashboard.html', {'all_files': all_files})
+        return render(request, 'admin:index', {'all_files': all_files})
     else:
         user_files = CustomUser.objects.filter(user=request.user)
         return render(request, 'dashboard.html', {'user_files': user_files})
