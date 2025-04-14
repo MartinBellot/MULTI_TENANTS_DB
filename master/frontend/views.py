@@ -9,12 +9,12 @@ def home(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('dashboard')
+            return redirect('/admin')
     return render(request, 'home.html', {'form': form})
 
 @login_required
 def dashboard(request):
     if request.user.is_superuser:
-        return render(request, 'dashboard.html', {'message': "Super administrateur : fonctionnalité en cours de développement."})
+        return render(request, 'admin:index', {'message': "Super administrateur : fonctionnalité en cours de développement."})
     else:
-        return render(request, 'dashboard.html', {'message': "Utilisateur : fonctionnalité en cours de développement."})
+        return render(request, 'admin:index', {'message': "Utilisateur : fonctionnalité en cours de développement."})

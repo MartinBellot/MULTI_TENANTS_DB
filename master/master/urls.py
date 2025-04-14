@@ -21,7 +21,6 @@ from frontend.views import home, dashboard
 urlpatterns = [
     path('admin/', admin.site.urls),  # Route pour l'interface d'administration
     path('', home, name='home'),  # Route pour la page d'accueil
-    path('dashboard/', dashboard, name='dashboard'),  # Route pour la page après connexion
     path('accounts/', include('accounts.urls')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
