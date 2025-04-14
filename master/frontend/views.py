@@ -2,7 +2,7 @@ from django.contrib.auth import login
 from django.shortcuts import render, redirect
 from .forms import CustomAuthenticationForm
 from django.contrib.auth.decorators import login_required
-from accounts.models import UserFile
+from accounts.models import CustomUser
 
 def home(request):
     form = CustomAuthenticationForm(request, data=request.POST or None)
@@ -16,8 +16,8 @@ def home(request):
 @login_required
 def dashboard(request):
     if request.user.is_superuser:
-        all_files = UserFile.objects.all()
+        all_files = CustomUser.objects.all()
         return render(request, 'dashboard.html', {'all_files': all_files})
     else:
-        user_files = UserFile.objects.filter(user=request.user)
+        user_files = CustomUser.objects.filter(user=request.user)
         return render(request, 'dashboard.html', {'user_files': user_files})
