@@ -22,6 +22,7 @@ def login_view(request):
         }
         # Demande de token au serveur Master via HTTP Basic Auth
         response = requests.post(token_url, data=data, auth=(client_id, client_secret))
+        print(f"Response from token endpoint: {response.status_code} - {response.text}")
         if response.status_code == 200:
             token_data = response.json()
             access_token = token_data.get("access_token")

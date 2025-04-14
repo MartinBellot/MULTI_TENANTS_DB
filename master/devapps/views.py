@@ -14,6 +14,7 @@ class ApplicationCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         # Associe l'application au développeur (utilisateur connecté)
         form.instance.user = self.request.user
+        print(f"User connected: {self.request.user}")
         return super().form_valid(form)
 
 class ApplicationListView(LoginRequiredMixin, ListView):

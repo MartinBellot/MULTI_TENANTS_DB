@@ -1,6 +1,6 @@
 
 services:
-  web:
+  master-web:
     build: .
     volumes:
       - .:/app
@@ -10,6 +10,8 @@ services:
       - .env
     depends_on:
       - db
+    networks:
+      - common-network
 
   db:
     image: postgres:13
@@ -19,6 +21,12 @@ services:
       POSTGRES_PASSWORD: yourpassword
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - common-network
 
 volumes:
   postgres_data:
+
+networks:
+  common-network:
+    external: true

@@ -148,7 +148,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MASTER_TOKEN_URL = "http://127.0.0.1:8000/o/token/"
-OAUTH2_INTROSPECTION_URL = 'http://127.0.0.1:8000/o/introspect/'
-OAUTH2_CLIENT_ID = "FJFLMVUmDMU09wEFMwXMvkJrsMzIcLWMFMHgKVWM"       # Remplacez par le Client ID enregistré dans Master
-OAUTH2_CLIENT_SECRET = "9Pfg2zGGoV6d7u0rmE3c329cqEfXR6favCsmtefUCuINSse4LvnCj64PAhkgA0EOtYTUllmxxLEwpxeOBWC3C9rKYMGmGFjoFSNXBQCaQv0IWko6bEJcJjz159Zd4EDs"  
+MASTER_TOKEN_URL = "http://master-web:8000/o/token/"
+OAUTH2_INTROSPECTION_URL = 'http://master-web:8000/o/introspect/'
+OAUTH2_CLIENT_ID = "oCZXRK6PjomwDJfhYyIhsI6WeLRXT1YOeykACAgi"       # Remplacez par le Client ID enregistré dans Master
+OAUTH2_CLIENT_SECRET = "dTcmVuVZaqgbwXo5TaCwIAPd1kYpS0XT0HWoDoxGgTQZCRidL4qVTOlmChm9yYixlFo7SFh34ITZBvIVf6CseLSO493BwSOMHamesYKSrNWGzyFamRCvGbsghot9j7AR"  
