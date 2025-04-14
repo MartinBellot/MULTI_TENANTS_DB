@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'accounts',
     'frontend',
+    'devapps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

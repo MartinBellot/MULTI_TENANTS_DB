@@ -1,0 +1,19 @@
+<!-- devapps/templates/devapps/application_list.html -->
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <h1>Mes applications OAuth</h1>
+  <ul>
+    {% for app in applications %}
+      <li>
+        <strong>{{ app.name }}</strong> - Client ID : <code>{{ app.client_id }}</code>
+        {% if app.client_secret %}
+          - Client Secret : <code>{{ app.client_secret }}</code>
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>Aucune application créée.</li>
+    {% endfor %}
+  </ul>
+  <p><a href="{% url 'devapps:register' %}">Créer une nouvelle application</a></p>
+{% endblock %}

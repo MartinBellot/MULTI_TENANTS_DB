@@ -24,5 +24,6 @@ urlpatterns = [
     path('dashboard/', dashboard, name='dashboard'),  # Route pour la page après connexion
     path('accounts/', include('accounts.urls')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('devapps/', include('devapps.urls')),  # Route pour les applications enregistrées
 ]
 
