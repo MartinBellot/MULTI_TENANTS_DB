@@ -9,6 +9,8 @@ class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'is_staff', 'is_active')
     list_filter = ('is_staff', 'is_active')
     ordering = ('email',)
+    readonly_fields = ('date_joined',)
+
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Informations personnelles', {'fields': ('first_name', 'last_name', 'username')}),
