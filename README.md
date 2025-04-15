@@ -6,14 +6,19 @@ Ce projet Django agit comme **serveur central d’authentification OAuth2** avec
 
 Il est conçu pour fonctionner avec un système de tenants indépendants qui se connectent à ce backend principal.
 
-## 🔧 Technologies
-Python - 3.10.12
-Django - 4.10.20
-DRF (Django REST Framework) - 3.16.0
-JWT Crypto - 1.5.6
-PostgreSQL
-Gunicorn - 23.0.0
-Docker & Docker Compose
+
+## 🔧 Technologies utilisées
+
+- Python 3.10.12
+- Django 4.2.20
+- Django REST Framework (DRF) 3.16.0
+- Django OAuth Toolkit
+- PostgreSQL
+- Docker & Docker Compose
+- Gunicorn
+
+---
+
 
 ## 📁 Structure
 master/ │ ├── accounts/ # Gestion des utilisateurs personnalisés (CustomUser) ├── frontend/ # Pages d'accueil et tableau de bord ├── devapps/ # Création & gestion d'applications OAuth2 ├── server_creation/ # (optionnel) pour déploiement de tenants ├── templates/ # Templates partagés ├── static/ # Fichiers statiques (styles.css) ├── .env # Variables d'environnement └── entrypoint.sh #
