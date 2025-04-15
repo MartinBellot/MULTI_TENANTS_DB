@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import CustomUser
 from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
+from .forms import CustomUserCreationForm
 
 def home(request):
     form = CustomAuthenticationForm(request, data=request.POST or None)
@@ -33,3 +34,20 @@ def create_tenant(request):
         # Par exemple : validation et sauvegarde d’un tenant dans la BDD
         return HttpResponse("Tenant créé avec succès !")
     return render(request, "create_tenant.html")
+
+
+@require_http_methods(["GET", "POST"])
+def signup(request):
+    """
+    Vue permettant à un nouvel utilisateur de s'inscrire.
+    Après validation, l'utilisateur est créé et connecté.
+    """
+    if request.method == "POST":
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('dashboard')  # Redirige vers une page de dashboard ou autre
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'signup.html', {'form': form})

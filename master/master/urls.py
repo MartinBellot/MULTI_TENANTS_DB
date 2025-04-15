@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from frontend.views import home, dashboard
+from frontend.views import home, dashboard, signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Route pour l'interface d'administration
@@ -26,5 +26,6 @@ urlpatterns = [
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('devapps/', include('devapps.urls')),  # Route pour les applications enregistrées
     path('deploy/', include('server_creation.urls', namespace='server_creation')),
+    path('signup/', signup, name="Sign Up"),  # Route pour la page d'inscription
 ]
 
