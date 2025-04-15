@@ -20,10 +20,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wnm5*cmaeuit1$ry&b$u$uz33@6j!2t48i7m$24_3nhcw^6%_@'
+#SECRET_KEY = 'django-insecure-wnm5*cmaeuit1$ry&b$u$uz33@6j!2t48i7m$24_3nhcw^6%_@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+if not SECRET_KEY and not DEBUG:
+    raise ValueError("DJANGO_SECRET_KEY manquant !")
+elif not SECRET_KEY:
+    # En dev uniquement
+    from django.core.management.utils import get_random_secret_key
+    SECRET_KEY = get_random_secret_key()
 
 ALLOWED_HOSTS = []
 
@@ -126,9 +134,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
