@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'frontend',
     'devapps',
+    'server_creation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,3 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Redirection après connexion
 LOGIN_REDIRECT_URL = '/'
+
+DEPLOYMENT_NETWORK = 'common-network'
+
+TENANTS_SOURCE_DIR = os.path.join(BASE_DIR, 'tenant')

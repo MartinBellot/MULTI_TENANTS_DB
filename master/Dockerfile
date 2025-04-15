@@ -19,6 +19,7 @@ RUN pip install --upgrade pip && \
 # Copier le reste du projet dans le container
 COPY . /app/
 
+
 # Copier le script entrypoint dans le container et le rendre exécutable
 COPY entrypoint.sh /app/
 RUN chmod +x /app/entrypoint.sh

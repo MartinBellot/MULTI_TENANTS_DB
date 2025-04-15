@@ -9,6 +9,8 @@ while ! nc -z $DB_HOST $DB_PORT; do
 done
 echo "Database is ready!"
 
+ls -l /app
+
 echo "=== Migrating database ==="
 python manage.py makemigrations
 python manage.py migrate --noinput

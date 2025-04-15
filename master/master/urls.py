@@ -25,5 +25,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('devapps/', include('devapps.urls')),  # Route pour les applications enregistrées
+    path('deploy/', include('server_creation.urls', namespace='server_creation')),
 ]
 
