@@ -11,30 +11,17 @@
 </div>
 
 <div class="container">
-    <h2>Bienvenue, {{ user.first_name }} !</h2>
-    <p>Ceci est votre tableau de bord. Vous pouvez gérer vos fichiers et vos données ici.</p>
-
+    <div class="text-container">
+        <div class="title">
+            <h2>Bienvenue !</h2>
+        </div>
+        <p>Ceci est votre tableau de bord. Vous pouvez gérer vos serveurs.</p>
+        <div class="action-buttons">
+            <a href="/deploy"><button>Lancer un nouveau serveur</button></a>
+        </div>
+    </div>
     {% if user.is_superuser %}
-        <h3>Fichiers de tous les utilisateurs</h3>
-        <div class="file-list">
-            {% for file in all_files %}
-                <div class="file-card">
-                    <p><strong>Utilisateur :</strong> {{ file.user.email }}</p>
-                    <p><strong>Nom du fichier :</strong> <a href="{{ file.file.url }}">{{ file.file.name }}</a></p>
-                    <p><strong>Date d'upload :</strong> {{ file.uploaded_at }}</p>
-                </div>
-            {% endfor %}
-        </div>
-    {% else %}
-        <h3>Vos fichiers</h3>
-        <div class="file-list">
-            {% for file in user_files %}
-                <div class="file-card">
-                    <p><strong>Nom du fichier :</strong> <a href="{{ file.file.url }}">{{ file.file.name }}</a></p>
-                    <p><strong>Date d'upload :</strong> {{ file.uploaded_at }}</p>
-                </div>
-            {% endfor %}
-        </div>
+        <!-- Vous pouvez ajouter des éléments spécifiques pour les superusers ici -->
     {% endif %}
 </div>
 {% endblock %}
