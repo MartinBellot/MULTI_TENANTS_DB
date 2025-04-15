@@ -7,6 +7,7 @@ from django.conf import settings
 from .forms import ServerCreationForm
 from .models import TenantServer
 import os
+from oauth2_provider.models import Application
 
 def server_list(request):
     """Affiche la liste des serveurs déployés avec leur statut de container."""
@@ -51,6 +52,25 @@ def server_create(request):
             client_id = secrets.token_hex(8)
 
             try:
+                oauth_app = Application.objects.create(
+                    user=request.user,  # ou un utilisateur par défaut si besoin
+                    name=f"{name} Tenant App",
+                    client_type=Application.CLIENT_CONFIDENTIAL,
+                    authorization_grant_type=Application.GRANT_PASSWORD,
+                    hash_client_secret=False,
+                    redirect_uris="",  # Pour le grant type "password", ce champ n'est pas utilisé
+                )
+                generated_client_id = oauth_app.client_id
+                generated_client_secret = oauth_app.client_secret
+                generated_hash_client_secret = oauth_app.hash_client_secret
+                print("Hash du secret: ", generated_hash_client_secret)
+                print("Application OAuth créée: ", generated_client_id, generated_client_secret)
+            except Exception as e:
+                print(f"Erreur lors de la création de l'application OAuth: {e}")
+                messages.error(request, f"Erreur lors de la création de l'application OAuth: {str(e)}")
+                return render(request, 'server_creation/server_create.html', {'form': form})
+
+            try:
                 print("Tentative de connexion au client Docker...")
                 client = docker.from_env()
                 print("Client Docker connecté.", client.ping)
@@ -93,6 +113,8 @@ def server_create(request):
                         "DJANGO_SUPERUSER_USERNAME": su_username,
                         "DJANGO_SUPERUSER_EMAIL": su_email,
                         "DJANGO_SUPERUSER_PASSWORD": su_password,
+                        "CLIENT_ID": generated_client_id,
+                        "CLIENT_SECRET": generated_client_secret,
                     },
                     ports={'8001/tcp': port},
                     detach=True,

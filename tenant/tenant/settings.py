@@ -158,5 +158,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MASTER_TOKEN_URL = "http://master-web:8000/o/token/"
 OAUTH2_INTROSPECTION_URL = 'http://master-web:8000/o/introspect/'
-OAUTH2_CLIENT_ID = "StjKS3PGTOC57Ow6QdmT5N30DJYVcSEwm4d11w0Z"       # Remplacez par le Client ID enregistré dans Master
-OAUTH2_CLIENT_SECRET = "9Ryx7fJzP2KZbCsFFbAO7grMXhoQ8EN5SYHQA38G3ap4OiLYaAh0c6GsfjGUwDIPtdnUNzHSwYVASB66qfWj4FY7eDY1oTUZpyTEfkodg6GIDkBFBf2Xu0ua1i6s2I61"  
+OAUTH2_CLIENT_ID = os.getenv("CLIENT_ID")
+OAUTH2_CLIENT_SECRET = os.getenv("CLIENT_SECRET") 
