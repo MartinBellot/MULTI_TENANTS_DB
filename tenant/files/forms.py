@@ -12,7 +12,7 @@ class FileUploadForm(forms.ModelForm):
 
     class Meta:
         model = File
-        fields = ['original_name', 'file_path']
+        exclude = ('original_name', 'file_path', 'upload_date')
 
     def save(self, commit=True):
         instance = super().save(commit=commit)

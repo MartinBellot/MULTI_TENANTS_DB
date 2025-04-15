@@ -61,6 +61,8 @@ OAUTH2_PROVIDER = {
     }
 }
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -147,8 +149,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ENCRYPTION_KEY = "Yl5AXk1r90K7ClRe0Wv7G-1vFsOPaehS6a_aJuzU9vc="
 
 MASTER_TOKEN_URL = "http://master-web:8000/o/token/"
 OAUTH2_INTROSPECTION_URL = 'http://master-web:8000/o/introspect/'
-OAUTH2_CLIENT_ID = "StjKS3PGTOC57Ow6QdmT5N30DJYVcSEwm4d11w0Z"       # Remplacez par le Client ID enregistré dans Master
-OAUTH2_CLIENT_SECRET = "9Ryx7fJzP2KZbCsFFbAO7grMXhoQ8EN5SYHQA38G3ap4OiLYaAh0c6GsfjGUwDIPtdnUNzHSwYVASB66qfWj4FY7eDY1oTUZpyTEfkodg6GIDkBFBf2Xu0ua1i6s2I61"  
+OAUTH2_CLIENT_ID = "SkosSnYSpqGoZZWMv8nEnij3iFkO5mxWIhPfY3tk"       # Remplacez par le Client ID enregistré dans Master
+OAUTH2_CLIENT_SECRET = "oQd1Ccq154EM9l3Y5vgupkvndqy9shOOPD1xLeotZJMOwA7BgDn6LrCj8Jw5NJDbAU196mLK4R1CRyvH14k5oIdq58LaV9xlj5blgBts8adoSwScmGfMN0Aht0mU1O1Z"  

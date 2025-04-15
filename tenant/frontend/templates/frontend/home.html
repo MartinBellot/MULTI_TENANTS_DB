@@ -100,6 +100,12 @@
           <div class="file">
             <i class="fa fa-file"></i>
             <p>{{ file.original_name }}</p>
+            <a href="{% url 'file_download' file.pk %}">Télécharger</a>
+            <a href="{% url 'file_view' file.pk %}" class="view-encrypted">Voir</a>
+            <form action="/files/delete/{{ file.pk }}/" method="post">
+              {% csrf_token %}
+              <button type="submit">Supprimer</button>
+            </form>
           </div>
           {% empty %}
           <p>Aucun fichier uploadé pour l'instant.</p>
@@ -110,17 +116,11 @@
         <section class="upload-section">
           <h2>Ajouter un fichier</h2>
           <form
-            action="{% url 'upload_file' %}"
+          action="{% url 'file_upload' %}"
             method="post"
             enctype="multipart/form-data"
           >
             {% csrf_token %}
-            <label for="folder">Choisir le dossier :</label>
-            <select name="folder" id="folder">
-              <option value="1">Dossier 1</option>
-              <option value="2">Dossier 2</option>
-            </select>
-            <br />
             <label for="file_upload">Sélectionner le fichier :</label>
             <input type="file" name="file_upload" id="file_upload" required />
             <br />
@@ -134,5 +134,22 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('keyup', function() {
+          const filter = searchInput.value.toLowerCase();
+          const files = document.querySelectorAll('.file-grid .file');
+          files.forEach(function(file) {
+            const fileName = file.querySelector('p').textContent.toLowerCase();
+            if (fileName.includes(filter)) {
+              file.style.display = 'block';
+            } else {
+              file.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
