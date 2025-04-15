@@ -1,3 +1,5 @@
 master/staticfiles/
 master/.env
 tenant/media/
+
+tenant/settings.py

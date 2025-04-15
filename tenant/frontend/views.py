@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 import requests
 from django.views.decorators.http import require_POST
@@ -72,3 +72,22 @@ def upload_file(request):
     else:
         # Gérer le cas où aucun fichier n'a été uploadé
         return render(request, 'frontend/home.html', {'error': 'Aucun fichier sélectionné'})
+    
+def file_view(request, pk):
+    file_obj = get_object_or_404(File, pk=pk)
+    # Ouvrir le fichier en mode binaire
+    try:
+        with file_obj.file_path.open('rb') as f:
+            encrypted_content = f.read()
+        # Essayer de décoder en UTF-8 (utile pour un fichier texte)
+        try:
+            encrypted_text = encrypted_content.decode('utf-8')
+        except UnicodeDecodeError:
+            encrypted_text = "Le contenu du fichier n'est pas affichable en tant que texte."
+    except Exception as e:
+        encrypted_text = f"Erreur lors de la lecture du fichier : {e}"
+    
+    return render(request, 'frontend/files/file_view.html', {
+        'file': file_obj,
+        'encrypted_content': encrypted_text,
+    })
