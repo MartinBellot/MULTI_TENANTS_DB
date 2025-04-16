@@ -23,6 +23,11 @@ tenant/
 ├── entrypoint.sh        # Script de lancement avec génération automatique de SECRET_KEY
 └── .env                 # Configuration (clé secrète, accès DB, credentials OAuth)
 ```
+## 📘 Documentation des composants
+
+- 🌍 [tenant](..) – Application autonome connectée au serveur OAuth2 principal
+  - 💻 [frontend](frontend) – Interface utilisateur du tenant
+  - 📁 [files](files) – Gestion des fichiers du tenant
 
 ## 🔐 Authentification centralisée OAuth2
 
