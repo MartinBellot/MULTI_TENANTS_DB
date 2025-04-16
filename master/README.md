@@ -33,13 +33,13 @@ master/
 
 ## 📘 Documentation des composants https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master
 
-- 🔒 [account](master/accounts) - Utilisateurs personnalisés
+- 🔒 [account](accounts) - Utilisateurs personnalisés
 
-- 🔒 [devapps](master/devapps) - Création d'application OAuth2
+- 🔒 [devapps](devapps) - Création d'application OAuth2
 
-- 🔒 [frontend](master/frontend) - Frontend de l'application 
+- 🔒 [frontend](frontend) - Frontend de l'application 
 
-- 🔒 [server_creation](master/server_creation/) - Création de serveur OAuth2 
+- 🔒 [server_creation](server_creation) - Création de serveur OAuth2 
 ---
 
 ## 🚀 Démarrage avec Docker
