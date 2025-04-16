@@ -23,6 +23,18 @@ Il est conçu pour fonctionner avec un système de tenants indépendants qui se 
 ## 📁 Structure
 master/ │ ├── accounts/ # Gestion des utilisateurs personnalisés (CustomUser) ├── frontend/ # Pages d'accueil et tableau de bord ├── devapps/ # Création & gestion d'applications OAuth2 ├── server_creation/ # (optionnel) pour déploiement de tenants ├── templates/ # Templates partagés ├── static/ # Fichiers statiques (styles.css) ├── .env # Variables d'environnement └── entrypoint.sh #
 
+
+## 📘 Documentation des composants
+
+- 🔒 [accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/README.md) - Gestion des utilisateurs personnalisés (CustomUser)
+- 🛠️ [devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/devapps/README.md) - Création & gestion des applications OAuth2
+- 💻 [frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/frontend/README.md) - Page de connexion et tableau de bord utilisateur
+- 🛠️ [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/README.md) - Création & gestion des applications OAuth2
+- 🚀 [server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/server_creation/README.md) - Déploiement automatique de tenants
+- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/README.md) - Application autonome connectée au serveur OAuth2 principal pour gérer le tenants
+
+---
+
 ## Démarrage automatique via Docker
 ```bash
 # Clone du repo

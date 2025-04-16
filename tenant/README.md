@@ -1,4 +1,4 @@
-# Tenant App - Plateforme connectée au serveur OAuth2
+# README.md Tenant - Plateforme connectée au serveur OAuth2
 
 ## 📝 Description
 
