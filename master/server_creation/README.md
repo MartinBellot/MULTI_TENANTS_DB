@@ -20,12 +20,14 @@ Ce module gère les utilisateurs personnalisés (`CustomUser`) avec des champs �
 
 ## 🌐 Navigation
 
-- [🏠 Projet Principal](./)
-- [📁 master](master/)
-- [🔒 accounts](master/accounts/)
-- [🛠️ devapps](master/devapps/)
-- [💻 frontend](master/frontend/)
-- [🚀 server_creation](master/server_creation/)
-- [🌍 tenant](tenant/)
-- [📁 tenant/files](tenant/files/)
-- [💻 tenant/frontend](tenant/frontend/)
+## 🌐 Navigation
+
+- [🏠 Projet Principal](../../#readme)
+- [📁 master](../../master#readme)
+- [🔒 accounts](../../master/accounts#readme)
+- [🛠️ devapps](../../master/devapps#readme)
+- [💻 frontend](../../master/frontend#readme)
+- [🚀 server_creation](../../master/server_creation#readme)
+- [🌍 tenant](../../tenant#readme)
+- [📁 tenant/files](../../tenant/files#readme)
+- [💻 tenant/frontend](../../tenant/frontend#readme)
