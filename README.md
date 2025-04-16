@@ -26,14 +26,14 @@ master/ │ ├── accounts/ # Gestion des utilisateurs personnalisés (Custo
 
 ## 📘 Documentation des composants
 
-- 🔒 [master](master/) - Application 
-  - 🔒 [master/accounts](master/accounts/) – Gestion des utilisateurs personnalisés (CustomUser)
-  - 🛠️ [master/devapps](master/devapps/) – Création & gestion des applications OAuth2
-  - 💻 [master/frontend](master/frontend/) – Pages d'accueil et tableau de bord utilisateur
+- 🔒 [master](master/) - Application principale OAuth2
+  - 🔒 [master/accounts](master/accounts/) – Utilisateurs personnlisés
+  - 🛠️ [master/devapps](master/devapps/) – Gestion d'application OAuth2
+  - 💻 [master/frontend](master/frontend/) – Tableau de bord utilisateur
   - 🚀 [master/server_creation](master/server_creation/) – Déploiement automatique de tenants
 - 🌍 [tenant](tenant/) – Application autonome connectée au serveur OAuth2 principal
-  - 💻 [tenant/frontend](tenant/frontend/) – Interface utilisateur du tenant
-  - 📁 [tenant/files](tenant/files/) – Gestion des fichiers du tenant
+  - 💻 [tenant/frontend](tenant/frontend/) – Gestion des fichiers et recherche sécurisée
+  - 📁 [tenant/files](tenant/files/) – Interface utilisateur du tenant
 
 ---
 

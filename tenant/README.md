@@ -25,9 +25,9 @@ tenant/
 ```
 ## 📘 Documentation des composants
 
-- 🌍 [tenant](..) – Application autonome connectée au serveur OAuth2 principal
-  - 💻 [frontend](frontend) – Interface utilisateur du tenant
+- 🌍 [tenant](.) – Application autonome connectée au serveur OAuth2 principal
   - 📁 [files](files) – Gestion des fichiers du tenant
+  - 💻 [frontend](frontend) – Interface utilisateur du tenant
 
 ## 🔐 Authentification centralisée OAuth2
 
@@ -109,3 +109,16 @@ OAUTH2_CLIENT_SECRET=...
 ## 👤 Auteur
 
 Projet réalisé dans le cadre d'un système multitenant sécurisé connecté à un backend d'authentification centralisée OAuth2.
+
+
+## 🌐 Navigation
+
+- [🏠 Projet Principal](./)
+- [📁 master](master/)
+- [🔒 accounts](master/accounts/)
+- [🛠️ devapps](master/devapps/)
+- [💻 frontend](master/frontend/)
+- [🚀 server_creation](master/server_creation/)
+- [🌍 tenant](tenant/)
+- [📁 tenant/files](tenant/files/)
+- [💻 tenant/frontend](tenant/frontend/)

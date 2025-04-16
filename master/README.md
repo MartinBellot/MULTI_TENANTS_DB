@@ -1,7 +1,5 @@
 # Readme.md master
 
-
-
 # Master Auth & App Management - Plateforme Django OAuth2
 
 ## 📝 Description
@@ -81,3 +79,7 @@ docker-compose up -d --build
 - **Mot de passe** : `adminpassword`
 
 ---
+
+
+---
+🔝 [Retour au début de ce README](#readme) • 🔙 [Section parente](../) • 🏠 [Accueil du projet](../)
