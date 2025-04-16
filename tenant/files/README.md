@@ -2,20 +2,21 @@
 
 ## 📝 Description
 
-Ce module gère les utilisateurs personnalisés (`CustomUser`) avec des champs étendus pour les besoins du projet.
+Ce module gère la gestion des fichiers pour les tenants, y compris le téléchargement, l'affichage et la suppression.
+
 
 ## 📁 Structure
 
-- `models.py` : Définition du modèle `CustomUser`
-- `admin.py` : Configuration de l'interface d'administration
-- `forms.py` : Formulaires personnalisés pour l'inscription et la connexion
-- `views.py` : Vues liées à l'authentification des utilisateurs
+- `models.py` : Définit les modèles pour les fichiers.
+- `views.py` :  Gère les vues pour la gestion des fichiers.
+- `templates/frontend/files/` : Contient les templates HTML pour les vues.
+- `utils.py` : Contient des fonctions utilitaires pour la gestion des fichiers.
 
 ## 🔐 Fonctionnalités
 
-- Authentification via OAuth2
-- Gestion des permissions et des groupes
-- Intégration avec le tableau de bord utilisateur
+- Téléchargement, affichage et suppression des fichiers.
+- Interface utilisateur pour la gestion des fichiers.
+- Intégration avec le système de permissions.
 
 
 ## 🌐 Navigation

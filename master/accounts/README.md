@@ -2,7 +2,7 @@
 
 ## 📝 Description
 
-Ce module gère les utilisateurs personnalisés (`CustomUser`) avec des champs étendus pour les besoins du projet.
+Ce module gère les utilisateurs personnalisés (`CustomUser`) avec des champs étendus pour les besoins du projet ainsi que l'authentification et la gestion des permissions.
 
 ## 📁 Structure
 

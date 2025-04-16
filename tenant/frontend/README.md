@@ -2,20 +2,20 @@
 
 ## 📝 Description
 
-Ce module gère les utilisateurs personnalisés (`CustomUser`) avec des champs étendus pour les besoins du projet.
+Ce module gère l'interface utilisateur frontale pour les tenants, y compris les pages d'accueil et de gestion des fichiers.
 
 ## 📁 Structure
 
-- `models.py` : Définition du modèle `CustomUser`
-- `admin.py` : Configuration de l'interface d'administration
-- `forms.py` : Formulaires personnalisés pour l'inscription et la connexion
-- `views.py` : Vues liées à l'authentification des utilisateurs
+- `views.py` : Gère les vues pour les pages frontales des tenants.
+- `templates/frontend` : Contient les templates HTML pour les différentes pages.
+- `static/frontend` : Contient les fichiers CSS pour le frontend.
+
 
 ## 🔐 Fonctionnalités
 
-- Authentification via OAuth2
-- Gestion des permissions et des groupes
-- Intégration avec le tableau de bord utilisateur
+- Pages d'accueil et de gestion des fichiers pour les tenants.
+- Intégration avec le système d'authentification.
+- Interface utilisateur responsive.
 
 ---
 
