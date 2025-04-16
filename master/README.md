@@ -82,4 +82,15 @@ docker-compose up -d --build
 
 
 ---
-🔝 [Retour au début de ce README](#readme) • 🔙 [Section parente](../) • 🏠 [Accueil du projet](../)
+
+## 🌐 Navigation
+
+- [🏠 Projet Principal](../)
+- [📁 master](../master/)
+- [🔒 accounts](../master/accounts/)
+- [🛠️ devapps](../master/devapps/)
+- [💻 frontend](../master/frontend/)
+- [🚀 server_creation](../master/server_creation/)
+- [🌍 tenant](../tenant/)
+- [📁 tenant/files](../tenant/files/)
+- [💻 tenant/frontend](../tenant/frontend/)
