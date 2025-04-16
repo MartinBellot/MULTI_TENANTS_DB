@@ -1,4 +1,4 @@
-# README.md Tenant - Plateforme connectée au serveur OAuth2
+# Tenant - Plateforme connectée au serveur OAuth2
 
 ## 📝 Description
 

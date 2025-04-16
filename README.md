@@ -25,13 +25,15 @@ master/ │ ├── accounts/ # Gestion des utilisateurs personnalisés (Custo
 
 
 ## 📘 Documentation des composants
-- 🔒 [master](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/) - Gestion des utilisateurs personnalisés (CustomUser)
-- 🔒 [accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/) - Gestion des utilisateurs personnalisés (CustomUser)
-- 🛠️ [devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/devapps/) - Création & gestion des applications OAuth2
-- 💻 [frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/frontend/) - Page de connexion et tableau de bord utilisateur
-- 🛠️ [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/) - Création & gestion des applications OAuth2
-- 🚀 [server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/server_creation/) - Déploiement automatique de tenants
-- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/) - Application autonome connectée au serveur OAuth2 principal pour gérer le tenants
+
+- 🔒 [master](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/) - Application 
+  - 🔒 [master/accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/) – Gestion des utilisateurs personnalisés (CustomUser)
+  - 🛠️ [master/devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/devapps/) – Création & gestion des applications OAuth2
+  - 💻 [master/frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/frontend/) – Pages d'accueil et tableau de bord utilisateur
+  - 🚀 [master/server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/server_creation/) – Déploiement automatique de tenants
+- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/) – Application autonome connectée au serveur OAuth2 principal
+  - 💻 [tenant/frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/frontend/) – Interface utilisateur du tenant
+  - 📁 [tenant/files](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/files/) – Gestion des fichiers du tenant
 
 ---
 
