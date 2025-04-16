@@ -1,6 +1,6 @@
 # Master Auth & App Management - Plateforme Django OAuth2
 
-## Description
+## 📝 Description
 
 Ce projet Django agit comme **serveur central d’authentification OAuth2** avec une interface d’administration, un tableau de bord utilisateur et un système de gestion des applications OAuth créées par des développeurs (devapps).
 
