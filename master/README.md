@@ -31,11 +31,11 @@ master/
 
 ---
 
-## 📘 Documentation des composants
+## 📘 Documentation des composants https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master
 
-- 🔒 [account](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main//master/master/accounts/) - Utilisateurs personnalisés
+- 🔒 [account](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master/master/accounts) - Utilisateurs personnalisés
 
-- 🔒 [devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/master/devapps/) - Création d'application OAuth2
+- 🔒 [devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master/master/devapps/) - Création d'application OAuth2
 
 - 🔒 [frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/master/frontend/) - Frontend de l'application 
 

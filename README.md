@@ -26,14 +26,14 @@ master/ │ ├── accounts/ # Gestion des utilisateurs personnalisés (Custo
 
 ## 📘 Documentation des composants
 
-- 🔒 [master](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/) - Application 
-  - 🔒 [master/accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/) – Gestion des utilisateurs personnalisés (CustomUser)
-  - 🛠️ [master/devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/devapps/) – Création & gestion des applications OAuth2
-  - 💻 [master/frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/frontend/) – Pages d'accueil et tableau de bord utilisateur
-  - 🚀 [master/server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/server_creation/) – Déploiement automatique de tenants
-- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/) – Application autonome connectée au serveur OAuth2 principal
-  - 💻 [tenant/frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/frontend/) – Interface utilisateur du tenant
-  - 📁 [tenant/files](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/files/) – Gestion des fichiers du tenant
+- 🔒 [master](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master) - Application 
+  - 🔒 [master/accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master/accounts) – Gestion des utilisateurs personnalisés (CustomUser)
+  - 🛠️ [master/devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master/devapps) – Création & gestion des applications OAuth2
+  - 💻 [master/frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master/frontend) – Pages d'accueil et tableau de bord utilisateur
+  - 🚀 [master/server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/master/server_creation) – Déploiement automatique de tenants
+- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/tenant) – Application autonome connectée au serveur OAuth2 principal
+  - 💻 [tenant/frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/tenant/frontend) – Interface utilisateur du tenant
+  - 📁 [tenant/files](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/readmes/tenant/files) – Gestion des fichiers du tenant
 
 ---
 
