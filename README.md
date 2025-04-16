@@ -25,13 +25,13 @@ master/ │ ├── accounts/ # Gestion des utilisateurs personnalisés (Custo
 
 
 ## 📘 Documentation des composants
-
-- 🔒 [accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/README.md) - Gestion des utilisateurs personnalisés (CustomUser)
-- 🛠️ [devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/devapps/README.md) - Création & gestion des applications OAuth2
-- 💻 [frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/frontend/README.md) - Page de connexion et tableau de bord utilisateur
-- 🛠️ [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/README.md) - Création & gestion des applications OAuth2
-- 🚀 [server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/server_creation/README.md) - Déploiement automatique de tenants
-- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/README.md) - Application autonome connectée au serveur OAuth2 principal pour gérer le tenants
+- 🔒 [master](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/) - Gestion des utilisateurs personnalisés (CustomUser)
+- 🔒 [accounts](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/) - Gestion des utilisateurs personnalisés (CustomUser)
+- 🛠️ [devapps](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/devapps/) - Création & gestion des applications OAuth2
+- 💻 [frontend](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/frontend/) - Page de connexion et tableau de bord utilisateur
+- 🛠️ [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/accounts/) - Création & gestion des applications OAuth2
+- 🚀 [server_creation](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/master/server_creation/) - Déploiement automatique de tenants
+- 🌍 [tenant](https://github.com/MartinBellot/MULTI_TENANTS_DB/blob/main/tenant/) - Application autonome connectée au serveur OAuth2 principal pour gérer le tenants
 
 ---
 
