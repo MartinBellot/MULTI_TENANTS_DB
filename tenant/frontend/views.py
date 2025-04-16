@@ -3,6 +3,7 @@ from django.conf import settings
 import requests
 from django.views.decorators.http import require_POST
 from files.models import File
+import os
 
 def login_view(request):
     """
@@ -16,6 +17,7 @@ def login_view(request):
         token_url = settings.MASTER_TOKEN_URL  # par exemple : "http://127.0.0.1:8000/o/token/"
         client_id = settings.OAUTH2_CLIENT_ID
         client_secret = settings.OAUTH2_CLIENT_SECRET
+        
 
         data = {
             "grant_type": "password",
@@ -26,11 +28,20 @@ def login_view(request):
         response = requests.post(token_url, data=data, auth=(client_id, client_secret))
         print(f"Response from token endpoint: {response.status_code} - {response.text}")
         if response.status_code == 200:
+            
             token_data = response.json()
             access_token = token_data.get("access_token")
             # Sauvegarder le token dans la session pour la navigation ultérieure
             request.session['access_token'] = access_token
             request.session['user_email'] = username  # vous pouvez adapter si l'introspection renvoie d'autres infos
+
+            created_by = os.environ.get("CREATED_BY", None)
+            print("[DEBUG] CREATED_BY:", created_by)  # Pour debug
+            print("[DEBUG] Utilisateur authentifié:", username)  # Pour debug
+
+            if created_by != username:
+                error = "Vous n'êtes pas le créateur de ce serveur."
+                return render(request, "frontend/login.html", {"error": error})
             return redirect('home')
         else:
             try:

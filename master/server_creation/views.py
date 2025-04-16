@@ -8,7 +8,9 @@ from .forms import ServerCreationForm
 from .models import TenantServer
 import os
 from oauth2_provider.models import Application
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def server_list(request):
     """Affiche la liste des serveurs déployés avec leur statut de container."""
     servers = TenantServer.objects.all().order_by('-deployed_at')
@@ -32,6 +34,7 @@ def server_list(request):
     
     return render(request, 'server_creation/server_list.html', {'servers': servers, 'status_dict': status_dict})
 
+@login_required
 def server_create(request):
     """
     Déploie un nouveau serveur Tenant.
@@ -115,6 +118,7 @@ def server_create(request):
                         "DJANGO_SUPERUSER_PASSWORD": su_password,
                         "CLIENT_ID": generated_client_id,
                         "CLIENT_SECRET": generated_client_secret,
+                        "CREATED_BY": request.user.email,
                     },
                     ports={'8001/tcp': port},
                     detach=True,
@@ -153,8 +157,8 @@ def server_create(request):
                 django_superuser_username=su_username,
                 django_superuser_email=su_email,
                 django_superuser_password=su_password,
+                created_by=request.user,
             )
-            
             messages.success(request, f"Serveur '{name}' déployé avec succès ! Secret: {plain_secret}")
             return redirect('server_creation:server_list')
     else:
@@ -163,6 +167,7 @@ def server_create(request):
     return render(request, 'server_creation/server_create.html', {'form': form})
 
 
+@login_required
 def server_stop(request, pk):
     """
     Arrête le container du serveur Tenant identifié par pk.
@@ -183,6 +188,8 @@ def server_stop(request, pk):
         messages.error(request, f"Erreur lors de l'arrêt du serveur '{server.name}': {e}")
     return redirect('server_creation:server_list')
 
+
+@login_required
 def server_start(request, pk):
     """
     Démarre le container du serveur Tenant identifié par pk.
@@ -198,6 +205,7 @@ def server_start(request, pk):
         messages.error(request, f"Erreur lors du démarrage du serveur '{server.name}': {e}")
     return redirect('server_creation:server_list')
 
+@login_required
 def server_restart(request, pk):
     """
     Redémarre le container du serveur Tenant identifié par pk.

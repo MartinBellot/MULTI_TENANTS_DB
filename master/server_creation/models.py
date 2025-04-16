@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.conf import settings
 
 class TenantServer(models.Model):
     name = models.CharField(max_length=100, help_text="Nom court du serveur")
@@ -27,6 +28,13 @@ class TenantServer(models.Model):
         blank=True,
         null=True,
         help_text="Mot de passe pour le superuser du Tenant (affiché temporairement en clair)"
+    )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='tenant_servers',
+        help_text="Utilisateur qui a créé ce serveur Tenant",
+        null=True,
     )
 
     def __str__(self):
