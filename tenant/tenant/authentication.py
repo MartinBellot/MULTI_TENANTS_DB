@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from rest_framework.authentication import BaseAuthentication
 from rest_framework import exceptions
+import os
 
 class MasterIntrospectionAuthentication(BaseAuthentication):
     """
@@ -22,6 +23,10 @@ class MasterIntrospectionAuthentication(BaseAuthentication):
         
         if scheme.lower() != 'bearer':
             return None
+        
+        CREATED_BY = os.environ.get("CREATED_BY", None)
+        print("[DEBUG] CREATED_BY:", CREATED_BY)  # Pour debug
+        print("[DEBUG] Utilisateur authentifié:", request.user.email)  # Pour debug
         
         introspection_url = settings.OAUTH2_INTROSPECTION_URL  # ex: 'http://127.0.0.1:8000/o/introspect/'
         data = {'token': token}

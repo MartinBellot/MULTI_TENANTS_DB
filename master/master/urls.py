@@ -17,15 +17,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from frontend.views import home, dashboard, signup
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Route pour l'interface d'administration
-    path('', home, name='home'),  # Route pour la page d'accueil
-    path('dashboard/', dashboard, name='dashboard'),  # Route pour la page après connexion
+    path('admin/', admin.site.urls), 
+    path('', home, name='home'), 
+    path('dashboard/', dashboard, name='dashboard'),  
     path('accounts/', include('accounts.urls')),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
-    path('devapps/', include('devapps.urls')),  # Route pour les applications enregistrées
+    path('devapps/', include('devapps.urls')), 
     path('deploy/', include('server_creation.urls', namespace='server_creation')),
-    path('signup/', signup, name="Sign Up"),  # Route pour la page d'inscription
+    path('signup/', signup, name="Sign Up"), 
+
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'), 
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
